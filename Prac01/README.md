@@ -1,8 +1,8 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<Routers><Router> 페이지 라우터. 링크와 Page Component를 연결
+<Link> 페이지 이동. <a>랑 다르게 페이지는 유지하고 링크만 이동
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<Layout>
+<Outlet> from react-router-dom. 
+useOutletContext() <Outlet>의 context로 들어온 data(json 같음)를
+하위 컴포넌트들이 받을 수 있게 하는 함수

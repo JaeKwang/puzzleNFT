@@ -1,8 +1,7 @@
 import {ethers} from "ethers"
-import {useState} from "react"
+import { Link } from "react-router-dom";
 
-function Header() {
-    const [signer, setSigner] = useState();
+function Header({signer, setSigner}) {
 
     const LoginMetamask = async () => {
         try{
@@ -34,15 +33,22 @@ function Header() {
         <header className="bg-green-100 flex justify-between items-center p-8 h-20">
             <div className="text-2xl font-semibold">👼 Angel + 🐷 Pig = ❓ </div>
             <div>
+                <Link className="link-style" to="/">Home</Link>
+                <Link className="link-style" to="/mint">Mint</Link>
+            </div>
+      
+            <div>
                 {
                 signer 
-                ? <div>
-                    {signer.address.substring(0, 7)}...{signer.address.substring(signer.address.length-5, signer.address.length)}
-                    <button className="bg-yellow-100 border-2 border-yellow-500 px-3 py-2 font-semibold rounded-full hover:bg-yellow-300" onClick={LogoutMetamask}>
+                ? <div className="flex items-center">
+                    <div className="text-gray-600 px-5 font-semibold italic">
+                        {signer.address.substring(0, 7)}...{signer.address.substring(signer.address.length-5, signer.address.length)}
+                    </div>
+                    <button className="btn-style" onClick={LogoutMetamask}>
                         Logout
                     </button>
                 </div>
-                : <button className="bg-yellow-100 border-2 border-yellow-500 px-5 py-2 font-semibold rounded-full hover:bg-yellow-300" onClick={LoginMetamask}>
+                : <button className="btn-style" onClick={LoginMetamask}>
                     🦊 메다마스크로 로그인
                 </button>
                 }
