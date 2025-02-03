@@ -64,7 +64,7 @@ function HomePage() {
       {images.map((v, i)=> (
         <img
           key={v}
-          className= {`p-0.5 ${balance[i] == 0 && "brightness-5"}`}
+          className= {`p-0.5 ${balance[i] == 0 && "brightness-20"}`}
           src={v}
         />
       ))}
