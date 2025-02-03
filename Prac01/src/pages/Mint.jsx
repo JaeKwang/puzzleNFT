@@ -14,7 +14,7 @@ function MintPage() {
   const mint = async () => {
     try{
       if(!signer || !contract) return;
-      // await contract.mintNFT(tokenId, amount);
+      await contract.mintNFT(tokenId, amount);
       
       const uri = await contract.uri(tokenId);
       const res = await axios.get(uri);
@@ -29,7 +29,7 @@ function MintPage() {
     }
   }
   
-  return <div className="bg-amber-100 py-8 flex-col flex items-center">
+  return <div className="py-8 flex-col flex items-center">
     <p className="text-3xl font-bold pb-8">Mint Your Puzzle NFT!</p>
     <div className="flex-row flex items-center">
       <p className="text-xl pr-2">ID</p>
